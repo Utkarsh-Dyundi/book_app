@@ -11,6 +11,7 @@ The idea is to build a booking app for all the events held in college and also f
 * User can cancel the tickets booked
 * User can view the events he has organized
 * User can view the tickets sold for the events he has organized
+* User can list events
 
 ## Todo
 
