@@ -14,14 +14,67 @@ The idea is to build a booking app for all the events held in college and also f
 
 ## Todo
 
-- [ ] User can login and register
-- [ ] User can book tickets for the events
+- [ ] **Design**
+    * [ ] Home Page
+    * [ ] Login Page
+    * [ ] Register Page
+    * [ ] Events Page
+    * [ ] Event Page
+    * [ ] Profile Page
+    * [ ] Tickets Page - **(`accessible from profile page`)**
+    * [ ] Events Page (includes registered and organized events) - **(`accessible from profile page`)**
+    * [ ] Transactions Page - **(`accessible from profile page`)**
+    * [ ] Events Listing Page - **(`accessible from profile page`)**
+     
+     <br>
+
+- [ ] **Coding**
+
+    * [ ] **Frontend**
+        * [ ] Home Page
+        * [ ] Login Page
+        * [ ] Register Page
+        * [ ] Events Page
+        * [ ] Event Page
+        * [ ] Profile Page
+        * [ ] Tickets Page
+        * [ ] Events Page
+
+
+    * [ ] **Backend**
+        * [ ] Database
+        * [ ] Authentication
+        * [ ] Tickets API 
+        * [ ] Users API 
+        * [ ] Events API 
+
+    * [ ] **Testing**
+    
+        * [ ] **Frontend**
+            * [ ] Home Page
+            * [ ] Login Page
+            * [ ] Register Page
+            * [ ] Events Page
+            * [ ] Event Page
+            * [ ] Profile Page
+            * [ ] Tickets Page
+            * [ ] Organized Events Page
+        
+        * [ ] **Backend**
+            * [ ] Database
+            * [ ] Authentication
+            * [ ] Events API 
+            * [ ] Tickets API
+            * [ ] Users API
+
 
 ## Tech Stack
 
 * Frontend: ReactJS
-* Backend: NodeJS/TypeScript
+* Backend: TypeScript
 * Database: PostgreSQL
+* Hosting: Netlify
+* Backend Hosting: Supabase
 
 ## How to run the project
 
@@ -41,6 +94,6 @@ The idea is to build a booking app for all the events held in college and also f
 
 ## Contributors
 
-* [Karan Kartikeya]([https://github.com/karankartikeya])
-* [Utkarsh Dyundi]([https://github.com/Utkarsh-Dyundi])
-* [Shivansh Sinha]([https://github.com/Shivanshsinha])
+* [Karan Kartikeya](https://github.com/karankartikeya)
+* [Utkarsh Dyundi](https://github.com/Utkarsh-Dyundi)
+* [Shivansh Sinha](https://github.com/Shivanshsinha)
