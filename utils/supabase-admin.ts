@@ -1,13 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
-import CourseId from '../pages/course_description/[courseId]';
-import { UserDetails, Subscription, Courses } from '../typing';
+
 
 // Note: supabaseAdmin uses the SERVICE_ROLE_KEY which you must only use in a secure server-side context
 // as it has admin priviliges and overwrites RLS policies!
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY || ''
-);
+// const supabaseAdmin = createClient(
+//   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+//   process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY || ''
+// );
 
 // const upsertProductRecord = async (product: Stripe.Product) => {
 //   const productData: Product = {
@@ -45,83 +44,83 @@ const supabaseAdmin = createClient(
 // };
 
 
-const getUser = async (email: string) => {
-  const { data, error } = await supabaseAdmin
-    .from('users')
-    .select()
-    .eq('email', email)
-  if (error || !data) {
-    throw error || new Error('No user found');
-  }
-  return data.length>0;
-};
+// const getUser = async (email: string) => {
+//   const { data, error } = await supabaseAdmin
+//     .from('users')
+//     .select()
+//     .eq('email', email)
+//   if (error || !data) {
+//     throw error || new Error('No user found');
+//   }
+//   return data.length>0;
+// };
 
 
-const addTransactionDetails = async (
-  user_id: string,
-  course_id: string,
-  order_id: string,
-  amount: number, //in paise
-  status: string,
-  payment_id?: string
-)=>{
-  const { error } = await supabaseAdmin
-    .from('transactions')
-    .insert({
-      user_id: user_id,
-      course_id: course_id,
-      order_id: order_id,
-      amount: amount,
-      status: status,
-      payment_id: payment_id,
-    })
-    if(error) throw error;
-    console.log(`Transaction inserted: ${user_id}`);
-    return;
-}
+// const addTransactionDetails = async (
+//   user_id: string,
+//   course_id: string,
+//   order_id: string,
+//   amount: number, //in paise
+//   status: string,
+//   payment_id?: string
+// )=>{
+//   const { error } = await supabaseAdmin
+//     .from('transactions')
+//     .insert({
+//       user_id: user_id,
+//       course_id: course_id,
+//       order_id: order_id,
+//       amount: amount,
+//       status: status,
+//       payment_id: payment_id,
+//     })
+//     if(error) throw error;
+//     console.log(`Transaction inserted: ${user_id}`);
+//     return;
+// }
 
-const addSubscription = async (
-  user_id: string,
-  course_id: string,
-  status: string,
-  subscription_createdtimestamp: string,
-  subscription_startDate: string,
-  subscription_endDueDate: string,
-  subscription_endDate: string,
-  isInstrument?: boolean,
-  isRenewal?: boolean
-) => {
-  const { error } = await supabaseAdmin
-    .from('subscriptions')
-    .insert({
-      user_id: user_id,
-      course_id: course_id,
-      status: status,
-      subscription_createdtimestamp: subscription_createdtimestamp,
-      current_subscription_starttimestamp: subscription_startDate,
-      current_subscription_endtimestamp: subscription_endDate,
-      due_enddatetimestamp: subscription_endDueDate,
-      isinstrument: isInstrument,
-    })
-    if(error) throw error;
-    console.log(`Subscription inserted: ${user_id}`);
-    return;
-}
+// const addSubscription = async (
+//   user_id: string,
+//   course_id: string,
+//   status: string,
+//   subscription_createdtimestamp: string,
+//   subscription_startDate: string,
+//   subscription_endDueDate: string,
+//   subscription_endDate: string,
+//   isInstrument?: boolean,
+//   isRenewal?: boolean
+// ) => {
+//   const { error } = await supabaseAdmin
+//     .from('subscriptions')
+//     .insert({
+//       user_id: user_id,
+//       course_id: course_id,
+//       status: status,
+//       subscription_createdtimestamp: subscription_createdtimestamp,
+//       current_subscription_starttimestamp: subscription_startDate,
+//       current_subscription_endtimestamp: subscription_endDate,
+//       due_enddatetimestamp: subscription_endDueDate,
+//       isinstrument: isInstrument,
+//     })
+//     if(error) throw error;
+//     console.log(`Subscription inserted: ${user_id}`);
+//     return;
+// }
 
-const retrieveSubscription = async ({
-}: {
-  courseId: string;
-}) => {
-  const { data, error } = await supabaseAdmin
-    .from('course')
-    .select('course_name')
-    .eq('course_id', CourseId)
-    .single();
-  if (error || !data?.course_name) {
-    throw error || new Error('No subscription found');
-  }
-  return data.course_name;
-};
+// const retrieveSubscription = async ({
+// }: {
+//   courseId: string;
+// }) => {
+//   const { data, error } = await supabaseAdmin
+//     .from('course')
+//     .select('course_name')
+//     .eq('course_id', CourseId)
+//     .single();
+//   if (error || !data?.course_name) {
+//     throw error || new Error('No subscription found');
+//   }
+//   return data.course_name;
+// };
 
 /**
  * Copies the billing details from the payment method to the customer object.
@@ -218,11 +217,11 @@ const retrieveSubscription = async ({
 //     );
 // };
 
-export {
-  // upsertProductRecord,
-  addSubscription,
-  addTransactionDetails,
-  retrieveSubscription,
-  getUser
-  // manageSubscriptionStatusChange
-};
+// export {
+//   // upsertProductRecord,
+//   // addSubscription,
+//   // addTransactionDetails,
+//   // retrieveSubscription,
+//   // getUser
+//   // manageSubscriptionStatusChange
+// };
