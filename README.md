@@ -45,7 +45,11 @@ The idea is to build a booking app for all the events held in college and also f
 
     * [ ] **Backend**
         * [ ] Database
-        * [ ] Authentication
+            * [x] Users Table
+            * [ ] Events Table
+            * [ ] Tickets Table
+            * [ ] Transactions Table
+        * [x] Authentication
         * [ ] Tickets API 
         * [ ] Users API 
         * [ ] Events API 
